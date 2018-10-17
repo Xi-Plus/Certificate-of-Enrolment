@@ -5,6 +5,8 @@ RewriteBase /certificate_of_enrolment/
 
 RewriteRule ^config/ - [F,L]
 RewriteRule ^data/ - [F,L]
+RewriteRule ^func/ - [F,L]
+RewriteRule ^lib/ - [F,L]
 RewriteRule ^login/?$ login.php?action=login [PT,L]
 RewriteRule ^logout/?$ login.php?action=logout [PT,L]
 RewriteRule ^manage/account/?$ manage_account.php [PT,L]
