@@ -1,0 +1,20 @@
+Options All -Indexes
+
+RewriteEngine On
+RewriteBase /certificate_of_enrolment/
+
+RewriteRule ^config/ - [F,L]
+RewriteRule ^data/ - [F,L]
+RewriteRule ^login/?$ login.php?action=login [PT,L]
+RewriteRule ^logout/?$ login.php?action=logout [PT,L]
+RewriteRule ^manage/account/?$ manage_account.php [PT,L]
+RewriteRule ^manage/data/?$ manage_data.php [PT,L]
+RewriteRule ^manage/fonts/?$ manage_fonts.php [PT,L]
+RewriteRule ^manage/function/?$ manage_function.php [PT,L]
+RewriteRule ^manage/pdf/?$ manage_pdf.php [PT,L]
+RewriteRule ^manage/schoolformat/?$ manage_schoolformat.php [PT,L]
+RewriteRule ^manage/schoolinput/?$ manage_schoolinput.php [PT,L]
+RewriteRule ^manage/studentformat/?$ manage_studentformat.php [PT,L]
+RewriteRule ^manage/studentinput/?$ manage_studentinput.php [PT,L]
+RewriteRule ^school/?$ school.php [PT,L]
+RewriteRule ^student/?$ student.php [PT,L]
