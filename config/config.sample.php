@@ -51,6 +51,8 @@ $G["source_text"] = [
 $G['safety_check_student'] = [];
 $G['safety_check_school'] = [];
 
+$G['BOM'] = chr(239).chr(187).chr(191);
+
 date_default_timezone_set("Asia/Taipei");
 
 require("func/check_login.php");

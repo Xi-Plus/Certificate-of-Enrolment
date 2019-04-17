@@ -29,6 +29,7 @@ if ($showform && $action === "download") {
 	header('Expires: 0');
 	header('Cache-Control: must-revalidate');
 	header('Pragma: public');
+	echo $G['BOM'];
 	@readfile(__DIR__."/data/data-student.csv");
 	exit;
 }
@@ -94,7 +95,7 @@ if ($showform && $action === "upload") {
 						$file = iconv($encoding, "UTF-8//IGNORE", $file);
 					}
 				}
-				if (substr($file, 0, 3) == chr(239).chr(187).chr(191)) {
+				if (substr($file, 0, 3) == $G['BOM']) {
 					?>
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
