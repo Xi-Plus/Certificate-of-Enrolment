@@ -49,11 +49,11 @@
 </nav>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118980789-5"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118980789-7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-118980789-5');
+  gtag('config', 'UA-118980789-7');
 </script>
