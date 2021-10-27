@@ -6,11 +6,10 @@ if (!isset($_SESSION["input"])) {
 	writelog(sprintf("[download] %s no input. %s", $U["ip"], json_encode($_SESSION)));
 }
 
-require_once('lib/TCPDF/tcpdf.php');
-use \setasign\Fpdi;
-require_once('lib/FPDI/src/autoload.php');
+use setasign\Fpdi;
+require_once(__DIR__.'/vendor/autoload.php');
 
-$pdf = new \setasign\Fpdi\TcpdfFpdi();
+$pdf = new setasign\Fpdi\TcpdfFpdi();
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
 
@@ -78,7 +77,7 @@ if (in_array($_SESSION["mode"], ["download", "preview"])) {
 		$align = $data[7];
 
 		$pdf->SetXY($positionx, $positiony);
-		
+
 		if ($_SESSION["mode"] === "download") {
 			$pdf->SetFont($fonts[$font], $style, $size, '', false);
 			$pdf->Cell($width, 0, $content, 0, 0, $align);
@@ -94,8 +93,8 @@ if (in_array($_SESSION["mode"], ["download", "preview"])) {
 	fclose($handle);
 
 } else if ($_SESSION["mode"] === "grid") {
-	for ($x=0; $x <= 200; $x+=10) { 
-		for ($y=0; $y <= 260; $y+=10) { 
+	for ($x=0; $x <= 200; $x+=10) {
+		for ($y=0; $y <= 260; $y+=10) {
 			$pdf->SetXY($x, $y);
 			if ($x == 0) {
 				$pdf->Cell(10, 10, $y, 1);
