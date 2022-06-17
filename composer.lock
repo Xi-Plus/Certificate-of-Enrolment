@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6b450acf318ca1731ccab8d5c1c8325",
+    "content-hash": "8f16efcd8e153147cbb8a785030bb632",
     "packages": [
+        {
+            "name": "pleonasm/bloom-filter",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pleonasm/bloom-filter.git",
+                "reference": "4a3292c9f83a778c44271bf4e4f6be1204b87f7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pleonasm/bloom-filter/zipball/4a3292c9f83a778c44271bf4e4f6be1204b87f7b",
+                "reference": "4a3292c9f83a778c44271bf4e4f6be1204b87f7b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.4",
+                "satooshi/php-coveralls": "^1.0.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pleo\\BloomFilter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Matthew Nagi",
+                    "email": "matthew.nagi@base-2.net"
+                }
+            ],
+            "description": "A pure PHP implementation of a Bloom Filter",
+            "keywords": [
+                "Bloom Filter",
+                "bloom",
+                "filter",
+                "sets"
+            ],
+            "support": {
+                "email": "matthew.nagi@base-2.net",
+                "issues": "https://github.com/pleonasm/bloom-filter/issues",
+                "source": "https://github.com/pleonasm/bloom-filter/tree/master"
+            },
+            "time": "2018-03-03T21:16:42+00:00"
+        },
         {
             "name": "setasign/fpdi",
             "version": "v2.3.6",
@@ -149,6 +200,56 @@
                 }
             ],
             "time": "2021-07-20T14:43:20+00:00"
+        },
+        {
+            "name": "wikimedia/common-passwords",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/common-passwords.git",
+                "reference": "5b51a88a27e17f485ba1295ee6916620686cd5a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/common-passwords/zipball/5b51a88a27e17f485ba1295ee6916620686cd5a5",
+                "reference": "5b51a88a27e17f485ba1295ee6916620686cd5a5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.9",
+                "pleonasm/bloom-filter": "1.0.2"
+            },
+            "require-dev": {
+                "mediawiki/mediawiki-codesniffer": "35.0.0",
+                "mediawiki/minus-x": "1.1.1",
+                "ockcyp/covers-validator": "1.3.3",
+                "php-parallel-lint/php-console-highlighter": "0.5.0",
+                "php-parallel-lint/php-parallel-lint": "1.2.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wikimedia\\CommonPasswords\\": "src/CommonPasswords/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Reed",
+                    "email": "reedy@wikimedia.org"
+                }
+            ],
+            "description": "List of the 100,000 most commonly used passwords",
+            "homepage": "https://www.mediawiki.org/wiki/CommonPasswords",
+            "support": {
+                "issues": "https://github.com/wikimedia/common-passwords/issues",
+                "source": "https://github.com/wikimedia/common-passwords/tree/v0.3.0"
+            },
+            "time": "2021-01-31T00:23:58+00:00"
         }
     ],
     "packages-dev": [],

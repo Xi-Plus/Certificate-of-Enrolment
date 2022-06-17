@@ -20,8 +20,6 @@ $C["CAPTCHAsecretkey"] = '';
 
 $C["PasswordSecurityEnabled"] = true;
 $C["PasswordSecurityMinLength"] = 4;
-$C["PasswordSecurityCannotBePopular"] = 100000;
-$C["PasswordSecurityPopularPasswordFile"] = 'path_to_your_file.txt';
 $G["PasswordSecurityText"] = [
 	"password_match_username" => "密碼與帳號相同",
 	"password_too_short" => "密碼太短，至少要".$C["PasswordSecurityMinLength"]."個字",

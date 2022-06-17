@@ -1,5 +1,8 @@
 <?php
+require_once(__DIR__.'/../vendor/autoload.php');
 require_once(__DIR__."/../config/config.php");
+
+use Wikimedia\CommonPasswords\CommonPasswords;
 
 function PasswordSecurity($password, $username=null) {
 	global $C;
@@ -13,26 +16,9 @@ function PasswordSecurity($password, $username=null) {
         return "password_too_short";
     }
 
-	$handle = fopen($C["PasswordSecurityPopularPasswordFile"], "r");
-	if ($handle === false) {
-		exit("取得PasswordSecurityPopularPasswordFile錯誤");
+	if (CommonPasswords::isCommon($password)) {
+		return "password_is_popular";
 	}
-
-	$count = 0;
-    while (($line = fgets($handle)) !== false) {
-        $line = trim($line);
-        if ($line !== "") {
-        	if ($password == $line) {
-        		return "password_is_popular";
-        	}
-
-        	$count ++;
-        }
-        if ($count >= $C["PasswordSecurityCannotBePopular"]) {
-        	break;
-        }
-    }
-    fclose($handle);
 
     return true;
 }
