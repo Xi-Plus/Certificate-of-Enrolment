@@ -73,7 +73,7 @@ if ($showform && $action === "upload") {
 				<?php
 				writelog(sprintf("[manage_data] %s %s upload failed. foramt: %s.", $U["data"]["account"], $U["ip"], $_FILES["file"]["type"]));
 			} else {
-				$encoding = mb_detect_encoding($file);
+				$encoding = mb_detect_encoding($file, mb_detect_order(), true);
 				if ($encoding === false) {
 					?>
 					<div class="alert alert-warning alert-dismissible" role="alert">
@@ -169,7 +169,7 @@ if ($showform) {
 			<input type="file" id="file" name="file" accept=".csv" class="form-control-file" required>
 		</div>
 		<span style="color: red;">（會直接覆蓋舊檔案）</span>
-		<button class="btn btn-success" type="submit" name="action" value="upload"><i class="fa fa-upload" aria-hidden="true"></i> 上傳</button> 
+		<button class="btn btn-success" type="submit" name="action" value="upload"><i class="fa fa-upload" aria-hidden="true"></i> 上傳</button>
 	</form>
 	<form action="" method="post">
 		<button class="btn btn-default" type="submit" name="action" value="view"><i class="fa fa-eye" aria-hidden="true"></i> 檢視所有資料</button>
